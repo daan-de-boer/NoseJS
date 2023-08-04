@@ -1,0 +1,13 @@
+.eslintrc.json
+.idea
+.prettierrc
+.vscode
+.azure
+dist
+node_modules
+package-lock.json
+package.json
+README.md
+LICENSE.md
+tsconfig.build.json
+tsconfig.json

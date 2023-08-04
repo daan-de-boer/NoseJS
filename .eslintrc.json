@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "jest": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "ignorePatterns": [
+    "*.d.ts"
+  ],
+  "plugins": [
+    "@typescript-eslint/eslint-plugin"
+  ],
+  "extends": [
+    "google",
+    "prettier"
+  ],
+  "rules": {
+    "new-cap": "off",
+    "require-jsdoc": "off",
+    "valid-jsdoc": "off",
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    // "@typescript-eslint/no-explicit-any": "error",
+    // "@typescript-eslint/no-implicit-any": "error",
+    // Disable core eslint 'no-unused-vars', and enable the typescript-eslint 'no-unused-vars'.
+    // https://github.com/typescript-eslint/typescript-eslint/issues/2621
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
+  }
+}

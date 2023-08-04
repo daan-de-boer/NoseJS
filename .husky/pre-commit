@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo 'Checking prettier'
+npm run check-format || false;
+
+echo 'Checking eslint'
+npm run check-lint || false;
+
+echo 'Checking unit tests'
+npm run test || false;
