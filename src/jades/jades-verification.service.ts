@@ -1,7 +1,7 @@
 import * as forge from "node-forge";
 import PfxHelper from "../helpers/pfx.helper";
 import * as jose from "jose";
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { FailureReasonDto } from "./dtos/verification-result.dto";
 import { JadesDto } from "./dtos/jades.dto";
 import { instanceToPlain } from "class-transformer";
@@ -11,6 +11,7 @@ const PFX_ATTR_TYPE_ORGANIZATION_IDENTIFIER = "2.5.4.97";
 @Injectable()
 export class JadesVerificationService {
   private readonly allowedIssuerThumbprints: string[];
+  private logger = new Logger(JadesVerificationService.name);
 
   constructor() {
     const enviromentThumbprint =
@@ -260,6 +261,12 @@ export class JadesVerificationService {
     const issuerThumbprint = PfxHelper.getThumbprint(
       signingCertificateRootIssuer
     );
+
+    this.logger.log(`issuerThumbprint: ${issuerThumbprint}`);
+    this.allowedIssuerThumbprints.forEach((thumbprint) =>
+      this.logger.log(`allowed thumbprint: ${thumbprint}`)
+    );
+
     return this.allowedIssuerThumbprints.includes(issuerThumbprint);
   }
 }
