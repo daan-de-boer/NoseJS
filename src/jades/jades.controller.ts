@@ -15,7 +15,7 @@ import { plainToInstance } from "class-transformer";
 import { ValidationHelper } from "src/helpers/validation.helper";
 
 @Controller("jades")
-@ApiTags("JAdES")
+@ApiTags("jades")
 export class JadesController {
   constructor(private readonly jadesService: JadesService) {}
 
