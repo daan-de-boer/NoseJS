@@ -262,11 +262,6 @@ export class JadesVerificationService {
       signingCertificateRootIssuer
     );
 
-    this.logger.log(`issuerThumbprint: ${issuerThumbprint}`);
-    this.allowedIssuerThumbprints.forEach((thumbprint) =>
-      this.logger.log(`allowed thumbprint: ${thumbprint}`)
-    );
-
     return this.allowedIssuerThumbprints.includes(issuerThumbprint);
   }
 }
