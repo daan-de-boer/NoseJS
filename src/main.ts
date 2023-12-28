@@ -11,7 +11,7 @@ import { ErrorFilter } from "./filters/error.filter";
 
 const GLOBAL_PREFIX = "api";
 const LISTEN_ADDRESS = process.env.HOSTNAME || "localhost";
-const LISTEN_PORT = process.env.PORT || 3200;
+const LISTEN_PORT = process.env.PORT || 9901;
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
