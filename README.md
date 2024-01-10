@@ -28,7 +28,7 @@ SIGNING_CERTIFICATE_ALLOWED_ISSUERS_CSV="hash1,hash2"
 
 Do note that the `PFX_PASS_CSV` uses `;` as the primary seperator and `,` to seperate the key, path and password as seen above
 
-Optionally you can also put in `PORT=XXXX` (for example 9901) to set the port number. By default this application uses port 3000.
+Optionally you can also put in `PORT=XXXX` (for example 9901) to set the port number. By default this application uses port 9901.
 
 With those steps done you should now be able to sign files and verify signatures.
 
